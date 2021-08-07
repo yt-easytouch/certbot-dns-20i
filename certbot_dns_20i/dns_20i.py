@@ -5,7 +5,7 @@ from certbot import errors
 from certbot import interfaces
 from certbot.plugins import dns_common
 from requests.exceptions import HTTPError
-from twentyi_api import TwentyIRestAPI
+from twentyi_api import TwentyIRestAPI, APIError
 
 
 @zope.interface.implementer(interfaces.IAuthenticator)
@@ -71,7 +71,7 @@ class Authenticator(dns_common.DNSAuthenticator):
             try:
                 self.dns_api.get_domain_info(candidate)
                 return candidate
-            except HTTPError:
+            except HTTPError, APIError:
                 continue
         raise errors.PluginError("Unable to find a 20i hosted zone for {0}".format(domain))
 
