@@ -71,7 +71,7 @@ class Authenticator(dns_common.DNSAuthenticator):
             try:
                 self.dns_api.get_domain_info(candidate)
                 return candidate
-            except HTTPError, APIError:
+            except (HTTPError, APIError):
                 continue
         raise errors.PluginError("Unable to find a 20i hosted zone for {0}".format(domain))
 
