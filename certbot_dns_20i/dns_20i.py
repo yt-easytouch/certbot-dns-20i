@@ -102,7 +102,7 @@ class TwentyIDns(object):
         dns = self._api.get(f'/domain/{zone}/dns')
         for record in dns['records']:
             if record['host'] == '.'.join([record_name, zone]):
-                raise errors.PluginError(f'Found an existing acme_challenge record for {zone}')
+                print(f'Found an existing acme_challenge record for {zone}. Continuing anyway')
         try:
             self._api.post(f'/domain/{zone}/dns', {
                 'new': {
@@ -136,7 +136,7 @@ class TwentyIDns(object):
                               ))
 
         if len(records) != 1:
-            raise errors.PluginError(f"Expecting to find 1 record to delete, found {len(records)}")
+            print(f"Expecting to find 1 record to delete, found {len(records)}. Deleting only the first one")
 
         ref = records[0]['ref']
         self._api.post(f'/domain/{zone}/dns', {
