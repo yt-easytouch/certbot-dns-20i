@@ -7,7 +7,7 @@ install_requires = [
     "acme>=0.29.0",
     "certbot>=0.34.0",
     "setuptools",
-    "twentyi-api-harryyoud @ git+https://github.com/harryyoud/python-20i-api"
+    "twentyi-api-yteasytouch @ git+https://github.com/yt-easytouch/python-20i-api"
 ]
 
 from os import path
@@ -22,7 +22,7 @@ setup(
     description="20i DNS Authenticator plugin for Certbot",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/harryyoud/certbot-dns-20i",
+    url="https://github.com/yt-easytouch/certbot-dns-20i",
     author="Harry Youd",
     author_email="harry@harryyoud.co.uk",
     license="Apache License 2.0",

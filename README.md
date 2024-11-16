@@ -7,7 +7,7 @@ This plugin automates the process of completing a dns-01 challenge by creating, 
 ## Installation
 
 ```shell
-pip install git+https://github.com/harryyoud/certbot-dns-20i
+pip install git+https://github.com/yt-easytouch/certbot-dns-20i
 ```
 
 ## Credentials
