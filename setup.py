@@ -7,7 +7,7 @@ install_requires = [
     "acme>=0.29.0",
     "certbot>=0.34.0",
     "setuptools",
-    "twentyi-api-yteasytouch @ git+https://github.com/yt-easytouch/python-20i-api"
+    "twentyi-api @ git+https://github.com/yt-easytouch/python-20i-api"
 ]
 
 from os import path
